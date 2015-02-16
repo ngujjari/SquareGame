@@ -81,6 +81,24 @@ public class MatchingSquare {
 	      System.out.println("Enter valid integer from 1,2,3,4,5,6,7,8,9" );
 		return returnVal;
 	}
+	
+	private boolean validateInput(int fromNd, int toNd)
+	{
+		 List<Integer> allNodes = Arrays.asList(nodes);
+	     boolean returnVal = false;
+	      if(allNodes.contains(new Integer(fromNd)) && 
+	    		  allNodes.contains(new Integer(toNd)))
+	      {
+	    	 
+	    	  returnVal = true;
+	    	//  System.out.println("Accepted !!" );
+	    	  return returnVal;
+	      }
+	      
+	      System.out.println("Enter valid integer from 1,2,3,4,5,6,7,8,9" );
+		return returnVal;
+	}
+	
 	// Take the input until user enter exit or e
 	public void runAlg()
 	{
@@ -90,13 +108,16 @@ public class MatchingSquare {
 	     // a = this.takeInput();
 	      while( a != -1 && !isWon)
 	      {
-	    	 a = this.takeInput(player);
-	    	 if(!validateInput(a))
-	    	 {
-	    		 continue;
-	    	 }
-	    	  System.out.println("You entered number "+a);
-	    	  if(tList.size() < 6){
+	    	 
+	    	  if(tList.size() < 6)
+	    	  {
+	    		 a = this.takeInput(player);
+	 	    	 if(!validateInput(a))
+	 	    	 {
+	 	    		 continue;
+	 	    	 }
+	 	    	  System.out.println("You entered number "+a);
+	 	    	  
 		    	  if(player.equals("Player1"))
 		    	  {
 		    		  aList.add(new Integer(a));
@@ -118,8 +139,8 @@ public class MatchingSquare {
 	    	  }
 	    	  else
 	    	  {
-	    		  System.out.println("Lets play the game !!! ");
-	    		  
+	    		  System.out.println("Lets play the game !!! !!!!");
+	    		  a = this.takeInput(player);
 	    		  
 	    	  }
 	    	  
